@@ -3,7 +3,82 @@ namespace Interfaz;
 using System;
 using System.Linq;
 using EspacioCadeteria;
-static class InterfazVisual{
+using EspacioArchivos;
+public static class InterfazVisual{
+
+    public static void IniciarSistema()
+    {
+        Cadeteria Cdria= null;
+        AccesoADatos archivo = new AccesoJSON();
+        ConsoleKeyInfo key;
+        int op = 1, salir = 0;
+        do
+        {
+            Console.WriteLine(Centrar(">>>>INICIAR SISTEMA<<<<", 30));
+            if (op == 1)
+            {
+                Console.WriteLine(Centrar(">>Leer CSV<<", 30));
+            }
+            else
+            {
+                Console.WriteLine(Centrar("Leer CSV", 30));
+            }
+            if (op == 2)
+            {
+                Console.WriteLine(Centrar(">>Leer JSON<<", 30));
+            }
+            else
+            {
+                Console.WriteLine(Centrar("Leer JSON", 30));
+            }
+            key = Console.ReadKey();
+            Console.Clear();
+            switch (key.Key)
+            {
+                case ConsoleKey.UpArrow:
+                    if (op > 1)
+                    {
+                        op--;
+                    }
+                    break;
+                case ConsoleKey.DownArrow:
+                    if (op < 2)
+                    {
+                        op++;
+                    }
+                    break;
+                case ConsoleKey.Enter:
+                    switch (op)
+                    {
+                        case 1:
+                            archivo = new AccesoCSV();
+                            Cdria = Inicialisar(archivo);
+                            var archi = new AccesoJSON();
+                            archi.GuardarJSON("Cadeteria",Cdria);
+                            archi.GuardarJSON("Cadetes",Cdria.Cadetes);
+                            break;
+                        case 2:
+                            Cdria = Inicialisar(archivo);
+                            break;
+                    }
+                    if(Cdria != null){
+                        salir=1;
+                    }
+                    break;
+            }
+        } while (salir == 0);
+        menu(Cdria);
+        archivo.GuardarResumen(Cdria);
+        archivo.EscribirResumen();
+    }
+
+    private static Cadeteria Inicialisar(AccesoADatos archivo)
+    {
+        Cadeteria Cdria = archivo.LeerCadeteria("Cadeteria");
+        archivo.LeerCadetes("Cadetes", Cdria.Cadetes);
+        return Cdria;
+    }
+
     private static void EscribirMensaje(string message){
         for (int i = 0; i < message.Length; i++)
         {
@@ -82,11 +157,16 @@ static class InterfazVisual{
                 Console.WriteLine(Centrar("Cambiar estado",30));
             }
             if(op==3){
+                Console.WriteLine(Centrar(">>Asignar<<",30));
+            }else{
+                Console.WriteLine(Centrar("Asignar",30));
+            }
+            if(op==4){
                 Console.WriteLine(Centrar(">>Reasignar<<",30));
             }else{
                 Console.WriteLine(Centrar("Reasignar",30));
             }
-            if(op==4){
+            if(op==5){
                 Console.WriteLine(Centrar(">>Salir<<",30));
             }else{
                 Console.WriteLine(Centrar("Salir",30));
@@ -101,7 +181,7 @@ static class InterfazVisual{
                     }
                     break;
                 case ConsoleKey.DownArrow:
-                    if(op<4){
+                    if(op<5){
                         op++;
                     }
                     break;
@@ -123,7 +203,7 @@ static class InterfazVisual{
                             break;
                         case 3:
                             if(Cdria.NumPed>1){
-                                Reasignar(Cdria);
+                                OpcionAsignar(Cdria);
                             }else{
                                 EscribirMensaje("- Aún no hay pedidos...");
                                 Console.ReadKey();
@@ -131,12 +211,42 @@ static class InterfazVisual{
                             }
                             break;
                         case 4:
+                            if(Cdria.NumPed>1){
+                                Reasignar(Cdria);
+                            }else{
+                                EscribirMensaje("- Aún no hay pedidos...");
+                                Console.ReadKey();
+                                Console.Clear();
+                            }
+                            break;
+                        case 5:
                             salir = 1;
                             break;
                     }
                     break;
             }
         } while (key.Key != ConsoleKey.Escape && salir==0);
+    }
+
+    private static void OpcionAsignar(Cadeteria cdria)
+    {
+        int numPed =0;
+        Console.WriteLine(Centrar(">>>ASIGNAR PEDIDO<<<", 30));
+        Console.WriteLine("-> Listado de Pedidos:");
+        foreach (var p in cdria.Pedidos) {
+            Console.WriteLine(" -> "+p.Numero+" Cliente:"+p.Client.Nombre+" Tel:"+p.Client.Telefono);
+        }
+        EscribirMensaje("- Qué pedido desea asignar: ");
+        int.TryParse(Console.ReadLine(), out numPed);
+        Console.Clear();
+        if(numPed>0 && numPed < cdria.NumPed){
+            Pedido ped = cdria.Pedidos.FirstOrDefault(p => p.Numero == numPed);
+            Asignar(ped,cdria);
+        }else{
+            EscribirMensaje("- No es un número de un pedido existente..."); 
+            Console.ReadKey();
+            Console.Clear();      
+        }
     }
 
     private static void Alta(Pedido p, Cadeteria Cdria)
@@ -187,7 +297,6 @@ static class InterfazVisual{
             EscribirMensaje("- Pedido creado...");
             Console.ReadKey();
             Console.Clear();
-            Asignar(p, Cdria);
         }
         else
         {
@@ -213,14 +322,6 @@ static class InterfazVisual{
         {
             Cdria.AsignarPedido(id, p);
             EscribirMensaje("- Pedido asignado...");
-        }
-        else
-        {
-            EscribirMensaje("- ID no valido, se asignará automáticamente...");
-            var r = new Random();
-            var max =Cdria.Cadetes.Count();
-            id = r.Next(1,max);
-            Cdria.AsignarPedido(id, p);
         }
     }
 
@@ -328,7 +429,7 @@ static class InterfazVisual{
 
     private static Pedido BuscarPedidoPorNum(Cadeteria Cdria, int numPed)
     {
-        return Cdria.Cadetes.SelectMany(cad => cad.Pedidos).FirstOrDefault(ped => ped.Numero == numPed);
+        return Cdria.Pedidos.FirstOrDefault(ped => ped.Numero == numPed);
     }
 
     private static void Reasignar(Cadeteria Cdria)
@@ -340,10 +441,10 @@ static class InterfazVisual{
         Console.Clear();
         if(numPed>0 && numPed<Cdria.NumPed){
             var ped = BuscarPedidoPorNum(Cdria,numPed);
-            var cadete = Cdria.Cadetes.FirstOrDefault(c=>c.Pedidos.Any(p=>p.Numero == numPed));
+            var cadete = Cdria.Cadetes.FirstOrDefault(c=>c.Id == ped.IdCadete); // traer el cadete que tiene asignado ese pedido
+            cadete.QuitarPedido(numPed);
             if(ped.Estado != Estado.Cancelado && ped.Estado != Estado.Entregado){
                 Asignar(ped,Cdria);
-                cadete.QuitarPedido(numPed);
             }else{
                 if(ped.Estado == Estado.Cancelado){
                     EscribirMensaje("- No se puede reasignar porque ya fué cancelado");
