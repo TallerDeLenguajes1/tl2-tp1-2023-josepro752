@@ -1,4 +1,4 @@
-﻿﻿using EspacioCadeteria;
+﻿using EspacioCadeteria;
 using EspacioArchivos;
 using Interfaz;
 
