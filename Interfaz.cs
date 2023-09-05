@@ -341,9 +341,9 @@ static class InterfazVisual{
         if(numPed>0 && numPed<Cdria.NumPed){
             var ped = BuscarPedidoPorNum(Cdria,numPed);
             var cadete = Cdria.Cadetes.FirstOrDefault(c=>c.Pedidos.Any(p=>p.Numero == numPed));
-            cadete.QuitarPedido(numPed);
             if(ped.Estado != Estado.Cancelado && ped.Estado != Estado.Entregado){
                 Asignar(ped,Cdria);
+                cadete.QuitarPedido(numPed);
             }else{
                 if(ped.Estado == Estado.Cancelado){
                     EscribirMensaje("- No se puede reasignar porque ya fué cancelado");
