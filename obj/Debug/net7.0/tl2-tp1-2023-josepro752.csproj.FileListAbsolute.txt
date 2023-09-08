@@ -13,3 +13,18 @@ E:\FACULTAD 2023\Taller de Lenguajes 2\PRACTICA\TP1\tl2-tp1-2023-josepro752\obj\
 E:\FACULTAD 2023\Taller de Lenguajes 2\PRACTICA\TP1\tl2-tp1-2023-josepro752\obj\Debug\net7.0\tl2-tp1-2023-josepro752.pdb
 E:\FACULTAD 2023\Taller de Lenguajes 2\PRACTICA\TP1\tl2-tp1-2023-josepro752\obj\Debug\net7.0\tl2-tp1-2023-josepro752.genruntimeconfig.cache
 E:\FACULTAD 2023\Taller de Lenguajes 2\PRACTICA\TP1\tl2-tp1-2023-josepro752\obj\Debug\net7.0\ref\tl2-tp1-2023-josepro752.dll
+C:\Users\josei\OneDrive\Escritorio\FACULTAD\Taller de Lenguajes 2\PRACTICA\TP2\tl2-tp1-2023-josepro752\bin\Debug\net7.0\tl2-tp1-2023-josepro752.exe
+C:\Users\josei\OneDrive\Escritorio\FACULTAD\Taller de Lenguajes 2\PRACTICA\TP2\tl2-tp1-2023-josepro752\bin\Debug\net7.0\tl2-tp1-2023-josepro752.deps.json
+C:\Users\josei\OneDrive\Escritorio\FACULTAD\Taller de Lenguajes 2\PRACTICA\TP2\tl2-tp1-2023-josepro752\bin\Debug\net7.0\tl2-tp1-2023-josepro752.runtimeconfig.json
+C:\Users\josei\OneDrive\Escritorio\FACULTAD\Taller de Lenguajes 2\PRACTICA\TP2\tl2-tp1-2023-josepro752\bin\Debug\net7.0\tl2-tp1-2023-josepro752.dll
+C:\Users\josei\OneDrive\Escritorio\FACULTAD\Taller de Lenguajes 2\PRACTICA\TP2\tl2-tp1-2023-josepro752\bin\Debug\net7.0\tl2-tp1-2023-josepro752.pdb
+C:\Users\josei\OneDrive\Escritorio\FACULTAD\Taller de Lenguajes 2\PRACTICA\TP2\tl2-tp1-2023-josepro752\obj\Debug\net7.0\tl2-tp1-2023-josepro752.csproj.AssemblyReference.cache
+C:\Users\josei\OneDrive\Escritorio\FACULTAD\Taller de Lenguajes 2\PRACTICA\TP2\tl2-tp1-2023-josepro752\obj\Debug\net7.0\tl2-tp1-2023-josepro752.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\josei\OneDrive\Escritorio\FACULTAD\Taller de Lenguajes 2\PRACTICA\TP2\tl2-tp1-2023-josepro752\obj\Debug\net7.0\tl2-tp1-2023-josepro752.AssemblyInfoInputs.cache
+C:\Users\josei\OneDrive\Escritorio\FACULTAD\Taller de Lenguajes 2\PRACTICA\TP2\tl2-tp1-2023-josepro752\obj\Debug\net7.0\tl2-tp1-2023-josepro752.AssemblyInfo.cs
+C:\Users\josei\OneDrive\Escritorio\FACULTAD\Taller de Lenguajes 2\PRACTICA\TP2\tl2-tp1-2023-josepro752\obj\Debug\net7.0\tl2-tp1-2023-josepro752.csproj.CoreCompileInputs.cache
+C:\Users\josei\OneDrive\Escritorio\FACULTAD\Taller de Lenguajes 2\PRACTICA\TP2\tl2-tp1-2023-josepro752\obj\Debug\net7.0\tl2-tp1-2023-josepro752.dll
+C:\Users\josei\OneDrive\Escritorio\FACULTAD\Taller de Lenguajes 2\PRACTICA\TP2\tl2-tp1-2023-josepro752\obj\Debug\net7.0\refint\tl2-tp1-2023-josepro752.dll
+C:\Users\josei\OneDrive\Escritorio\FACULTAD\Taller de Lenguajes 2\PRACTICA\TP2\tl2-tp1-2023-josepro752\obj\Debug\net7.0\tl2-tp1-2023-josepro752.pdb
+C:\Users\josei\OneDrive\Escritorio\FACULTAD\Taller de Lenguajes 2\PRACTICA\TP2\tl2-tp1-2023-josepro752\obj\Debug\net7.0\tl2-tp1-2023-josepro752.genruntimeconfig.cache
+C:\Users\josei\OneDrive\Escritorio\FACULTAD\Taller de Lenguajes 2\PRACTICA\TP2\tl2-tp1-2023-josepro752\obj\Debug\net7.0\ref\tl2-tp1-2023-josepro752.dll

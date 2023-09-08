@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Jose.DESKTOP-6FS2U8S\\.nuget\\packages\\": {}
+    "C:\\Users\\josei\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\FACULTAD 2023\\Taller de Lenguajes 2\\PRACTICA\\TP1\\tl2-tp1-2023-josepro752\\tl2-tp1-2023-josepro752.csproj",
+      "projectUniqueName": "C:\\Users\\josei\\OneDrive\\Escritorio\\FACULTAD\\Taller de Lenguajes 2\\PRACTICA\\TP2\\tl2-tp1-2023-josepro752\\tl2-tp1-2023-josepro752.csproj",
       "projectName": "tl2-tp1-2023-josepro752",
-      "projectPath": "E:\\FACULTAD 2023\\Taller de Lenguajes 2\\PRACTICA\\TP1\\tl2-tp1-2023-josepro752\\tl2-tp1-2023-josepro752.csproj",
-      "packagesPath": "C:\\Users\\Jose.DESKTOP-6FS2U8S\\.nuget\\packages\\",
-      "outputPath": "E:\\FACULTAD 2023\\Taller de Lenguajes 2\\PRACTICA\\TP1\\tl2-tp1-2023-josepro752\\obj\\",
+      "projectPath": "C:\\Users\\josei\\OneDrive\\Escritorio\\FACULTAD\\Taller de Lenguajes 2\\PRACTICA\\TP2\\tl2-tp1-2023-josepro752\\tl2-tp1-2023-josepro752.csproj",
+      "packagesPath": "C:\\Users\\josei\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\josei\\OneDrive\\Escritorio\\FACULTAD\\Taller de Lenguajes 2\\PRACTICA\\TP2\\tl2-tp1-2023-josepro752\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Jose.DESKTOP-6FS2U8S\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\josei\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"

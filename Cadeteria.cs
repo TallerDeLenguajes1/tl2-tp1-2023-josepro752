@@ -104,10 +104,7 @@ public class Cadete {
         return null;
     }
     public float JornalACobrar() {
-        return PedidosEntregados()*500;
-    }
-    private int PedidosEntregados(){
-        return Pedidos.Count(p => p.Estado == Estado.Entregado);//uso del LINQ
+        return CantidadPedidos(1)*500;
     }
     public int CantidadPedidos(int op){
         int cant=0;
@@ -120,6 +117,9 @@ public class Cadete {
                 break;
             case 3:
                 cant = Pedidos.Count(p=> p.Estado == Estado.Cancelado);
+                break;
+            default:
+                cant = Pedidos.Count(); 
                 break;
         }
         return cant;
